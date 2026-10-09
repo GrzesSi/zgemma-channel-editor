@@ -1,0 +1,16 @@
+Edytor kanałów dla Zgemmy / Enigma2 — wersja testowa 1.0.2
+
+Przygotowałem polski edytor listy kanałów działający na dekoderze i obsługiwany przez przeglądarkę na komputerze lub telefonie.
+
+Można układać kanały i grupy, kopiować i przenosić wpisy, cofać zmiany, importować i eksportować listy .tar.gz oraz przywracać kopie. Pod nazwą kanału jest jego stały typ, np. wiadomości, filmy, seriale lub sport. Przed zapisem powstaje automatyczna kopia listy.
+
+Wymagania: OpenATV 8, Python 3 i OpenWebif. Paczka nie zawiera list kanałów ani danych dostępowych — każdy korzysta ze swojej listy.
+
+Instalacja: rozpakuj załączony ZIP, skopiuj folder KanalowyEditor do /usr/lib/enigma2/python/Plugins/Extensions/ i zrestartuj GUI. W menu Wtyczki → Edytor kanałów znajdziesz adres strony.
+
+To wydanie testowe. Operacje na listach i stronę sprawdzono lokalnie, a integrację Enigma2 w symulacji. Będę wdzięczny za informacje o działaniu na rzeczywistych dekoderach: model, wersja systemu i opis ewentualnego problemu.
+
+Edytor działa w zaufanej sieci lokalnej bez logowania. Nie wystawiaj portu 8877 do internetu.
+
+Projekt i instrukcja: https://github.com/GrzesSi/kanalowy-editor-zgemma
+Paczki do pobrania: https://github.com/GrzesSi/kanalowy-editor-zgemma/releases/tag/v1.0.2
