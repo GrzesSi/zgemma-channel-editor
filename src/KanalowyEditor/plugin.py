@@ -58,7 +58,7 @@ def sessionstart(reason,session=None,**kwargs):
         _listener=reactor.listenTCP(8877,Site(EditorResource()),interface='0.0.0.0')
     except Exception as e:
         _start_error=str(e)
-        print('[KanalowyEditor] Startup failed:',type(e).__name__)
+        print('[zgemma-channel-editor] Startup failed:',type(e).__name__)
 
 def show_info(session,**kwargs):
     if _application is None or _listener is None:
@@ -76,6 +76,6 @@ def show_info(session,**kwargs):
     session.open(MessageBox,'Otwórz na komputerze lub telefonie:\nhttp://'+address+':8877\n\nStrona otwiera się od razu w sieci lokalnej.\nZmiany są zapisywane dopiero przyciskiem Zapisz na dekoderze.',MessageBox.TYPE_INFO,timeout=0)
 
 def Plugins(**kwargs):
-    return [PluginDescriptor(name='Edytor kanałów',description='Ręczne układanie listy przez przeglądarkę',where=PluginDescriptor.WHERE_SESSIONSTART,fnc=sessionstart,needsRestart=True),
-            PluginDescriptor(name='Edytor kanałów',description='Adres strony edytora kanałów',where=PluginDescriptor.WHERE_PLUGINMENU,fnc=show_info)]
+    return [PluginDescriptor(name='zgemma-channel-editor',description='Ręczne układanie listy przez przeglądarkę',where=PluginDescriptor.WHERE_SESSIONSTART,fnc=sessionstart,needsRestart=True),
+            PluginDescriptor(name='zgemma-channel-editor',description='Adres strony edytora kanałów',where=PluginDescriptor.WHERE_PLUGINMENU,fnc=show_info)]
 

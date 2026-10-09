@@ -1,22 +1,22 @@
-EDYTOR KANAŁÓW DLA ZGEMMY — 1.0.2 (wydanie testowe)
+zgemma-channel-editor — 1.0.3 (wydanie testowe)
 
 WYMAGANIA
 OpenATV 8, Python 3, OpenWebif. Inne systemy i rzeczywiste dekodery wymagają sprawdzenia. Systemy z Pythonem 2 nie są obsługiwane.
 
 INSTALACJA PRZEZ WINSCP
-1. Rozpakuj Edytor_Kanalow_Zgemma_1.0.2.zip.
+1. Rozpakuj zgemma-channel-editor_1.0.3.zip.
 2. Połącz się z własnym dekoderem, używając jego adresu IP i danych dostępu.
 3. Skopiuj CAŁY folder KanalowyEditor do:
    /usr/lib/enigma2/python/Plugins/Extensions/
 4. Zrestartuj interfejs użytkownika (GUI).
-5. Otwórz Wtyczki → Edytor kanałów, aby sprawdzić adres strony.
+5. Otwórz Wtyczki → zgemma-channel-editor, aby sprawdzić adres strony.
 6. Na komputerze lub telefonie w tej samej sieci otwórz:
    http://ADRES_IP_DEKODERA:8877
    Zamiast ADRES_IP_DEKODERA wpisz adres swojego dekodera.
 
 ALTERNATYWA: IPK
-Zainstaluj pakiet enigma2-plugin-extensions-kanalowyeditor_1.0.2_all.ipk jako lokalną wtyczkę w OpenATV, a następnie ręcznie zrestartuj GUI.
-W terminalu: opkg install /tmp/enigma2-plugin-extensions-kanalowyeditor_1.0.2_all.ipk
+Zainstaluj pakiet enigma2-plugin-extensions-zgemma-channel-editor_1.0.3_all.ipk jako lokalną wtyczkę w OpenATV, a następnie ręcznie zrestartuj GUI.
+W terminalu: opkg install /tmp/enigma2-plugin-extensions-zgemma-channel-editor_1.0.3_all.ipk
 
 OBSŁUGA
 Układaj kanały i grupy, kopiuj, przenoś, wyszukuj, importuj lub eksportuj własne listy .tar.gz. Stały typ kanału jest widoczny pod nazwą; nieznane stacje mają Typ nieokreślony.

@@ -4,7 +4,7 @@ ROOT=Path(__file__).resolve().parent; SRC=ROOT/'src'/'KanalowyEditor'; DIST=ROOT
 readme=(ROOT/'INSTALACJA.txt').read_text(encoding='utf-8')
 for p in SRC.glob('*.py'): py_compile.compile(str(p),doraise=True)
 files=[p for p in SRC.rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc']
-archive=DIST/'Edytor_Kanalow_Zgemma_1.0.2.zip'
+archive=DIST/'zgemma-channel-editor_1.0.3.zip'
 with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED) as z:
  for p in files: z.write(p,'KanalowyEditor/'+p.relative_to(SRC).as_posix())
  z.writestr('INSTALACJA.txt',readme.encode('utf-8'))
@@ -28,14 +28,14 @@ for n in datafiles:
  p=Path(n)
  for parent in p.parents:
   if str(parent)!='.': directories.add(parent.as_posix())
-control='Package: enigma2-plugin-extensions-kanalowyeditor\nVersion: 1.0.2\nArchitecture: all\nMaintainer: Local project\nSection: extra\nPriority: optional\nDepends: enigma2, enigma2-plugin-extensions-openwebif\nDescription: Polish browser channel editor with backup and full channel preservation\n'
+control='Package: enigma2-plugin-extensions-zgemma-channel-editor\nVersion: 1.0.3\nArchitecture: all\nMaintainer: Local project\nSection: extra\nPriority: optional\nDepends: enigma2, enigma2-plugin-extensions-openwebif\nReplaces: enigma2-plugin-extensions-kanalowyeditor\nConflicts: enigma2-plugin-extensions-kanalowyeditor\nProvides: enigma2-plugin-extensions-kanalowyeditor\nDescription: zgemma-channel-editor - Polish browser channel editor with backup\n'
 members={'debian-binary':b'2.0\n','control.tar.gz':tar_data({'control':control.encode()}),'data.tar.gz':tar_data(datafiles,directories)}
 out=io.BytesIO();out.write(b'!<arch>\n')
 for name,data in members.items():
  header=((name+'/').ljust(16)+'0'.ljust(12)+'0'.ljust(6)+'0'.ljust(6)+'100644'.ljust(8)+str(len(data)).ljust(10)+'`\n').encode('ascii')
  assert len(header)==60;out.write(header);out.write(data)
  if len(data)%2:out.write(b'\n')
-ipk=DIST/'enigma2-plugin-extensions-kanalowyeditor_1.0.2_all.ipk';ipk.write_bytes(out.getvalue())
+ipk=DIST/'enigma2-plugin-extensions-zgemma-channel-editor_1.0.3_all.ipk';ipk.write_bytes(out.getvalue())
 # Independently decode the resulting ar package and compare every deployed file.
 raw=ipk.read_bytes();assert raw[:8]==b'!<arch>\n';i=8;decoded={}
 while i<len(raw):
@@ -44,7 +44,7 @@ assert decoded['debian-binary']==b'2.0\n'
 with tarfile.open(fileobj=io.BytesIO(decoded['data.tar.gz']),mode='r:gz') as tf:
  extracted={m.name:tf.extractfile(m).read() for m in tf if m.isfile()}
  assert extracted==datafiles
-report={'version':'1.0.2','runtime':'OpenATV 8 / Python 3 / Twisted from OpenWebif','receiver_port':8877,'receiver_install_performed':False,'hardware_test_performed':False,'access':'local_network_no_login','package_files':len(files),'packages':{p.name:{'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in (archive,ipk)}}
+report={'version':'1.0.3','runtime':'OpenATV 8 / Python 3 / Twisted from OpenWebif','receiver_port':8877,'receiver_install_performed':False,'hardware_test_performed':False,'access':'local_network_no_login','package_files':len(files),'packages':{p.name:{'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in (archive,ipk)}}
 for p in (archive,ipk):
  (DIST/(p.name+'.sha256')).write_text(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.name+'\n',encoding='ascii')
 (ROOT/'wersja_i_paczki.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(report,ensure_ascii=False))
