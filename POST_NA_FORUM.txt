@@ -12,5 +12,5 @@ To wydanie testowe. Operacje na listach i stronę sprawdzono lokalnie, a integra
 
 Edytor działa w zaufanej sieci lokalnej bez logowania. Nie wystawiaj portu 8877 do internetu.
 
-Projekt i instrukcja: https://github.com/GrzesSi/kanalowy-editor-zgemma
-Paczki do pobrania: https://github.com/GrzesSi/kanalowy-editor-zgemma/releases/tag/v1.0.2
+Projekt i instrukcja: https://github.com/GrzesSi/zgemma-channel-editor
+Paczki do pobrania: https://github.com/GrzesSi/zgemma-channel-editor/releases/tag/v1.0.2

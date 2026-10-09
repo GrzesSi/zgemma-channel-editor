@@ -15,7 +15,7 @@ Wersja 1.0.2 — wydanie testowe. Docelowe środowisko: OpenATV 8 z Pythonem 3 i
 
 ## Instalacja
 
-[Pobierz paczkę ZIP](https://github.com/GrzesSi/kanalowy-editor-zgemma/releases/download/v1.0.2/Edytor_Kanalow_Zgemma_1.0.2.zip) · [Pobierz pakiet IPK](https://github.com/GrzesSi/kanalowy-editor-zgemma/releases/download/v1.0.2/enigma2-plugin-extensions-kanalowyeditor_1.0.2_all.ipk) · [Wszystkie pliki wydania](https://github.com/GrzesSi/kanalowy-editor-zgemma/releases/tag/v1.0.2)
+[Pobierz paczkę ZIP](https://github.com/GrzesSi/zgemma-channel-editor/releases/download/v1.0.2/Edytor_Kanalow_Zgemma_1.0.2.zip) · [Pobierz pakiet IPK](https://github.com/GrzesSi/zgemma-channel-editor/releases/download/v1.0.2/enigma2-plugin-extensions-kanalowyeditor_1.0.2_all.ipk) · [Wszystkie pliki wydania](https://github.com/GrzesSi/zgemma-channel-editor/releases/tag/v1.0.2)
 
 Pobierz paczkę instalacyjną `Edytor_Kanalow_Zgemma_1.0.2.zip` z sekcji **Releases** projektu albo z załącznika na forum. Archiwum kodu źródłowego projektu jest osobnym plikiem.
 
@@ -58,7 +58,7 @@ Pliki ZIP, IPK i ich sumy SHA-256 powstaną w folderze `dist`. Budowanie nie wym
 
 ## Publikacja
 
-Repozytorium można nazwać `kanalowy-editor-zgemma`. Dodaj zawartość tego folderu do repozytorium. W sekcji **Releases** utwórz wydanie `v1.0.2`, zaznacz **pre-release** i dołącz paczki ZIP, IPK oraz pliki SHA-256 z `dist`. Do opisu wydania możesz użyć pliku `RELEASE_NOTES.md`.
+Repozytorium można nazwać `zgemma-channel-editor`. Dodaj zawartość tego folderu do repozytorium. W sekcji **Releases** utwórz wydanie `v1.0.2`, zaznacz **pre-release** i dołącz paczki ZIP, IPK oraz pliki SHA-256 z `dist`. Do opisu wydania możesz użyć pliku `RELEASE_NOTES.md`.
 
 Na forum zamieść tekst z `POST_NA_FORUM.txt` oraz paczkę instalacyjną ZIP; po utworzeniu repozytorium możesz dołączyć jego link. Publikacja na forum nie oznacza dodania wtyczki do oficjalnego katalogu OpenATV.
 
