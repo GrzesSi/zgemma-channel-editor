@@ -1,6 +1,6 @@
 # zgemma-channel-editor
 
-Polski edytor listy kanałów obsługiwany przez przeglądarkę na komputerze lub telefonie. Wtyczka działa na dekoderze; każdy użytkownik korzysta ze swojej własnej listy kanałów.
+Polski edytor listy kanałów obsługiwany przez przeglądarkę na komputerze lub telefonie. Wtyczka odczytuje listę kanałów z dekodera, na którym jest zainstalowana. Osoby korzystające z tego samego dekodera edytują tę samą listę.
 
 Wersja 1.0.3 — wydanie testowe. Docelowe środowisko: OpenATV 8 z Pythonem 3 i OpenWebif. Integrację sprawdzono w symulacji, a stronę na komputerze i telefonie. Działanie na rzeczywistym dekoderze oraz innych obrazach Enigma2 wymaga weryfikacji. Starsze systemy z Pythonem 2 nie są obsługiwane.
 
@@ -17,23 +17,31 @@ Wersja 1.0.3 — wydanie testowe. Docelowe środowisko: OpenATV 8 z Pythonem 3 i
 
 [Pobierz paczkę ZIP](https://github.com/GrzesSi/zgemma-channel-editor/releases/download/v1.0.3/zgemma-channel-editor_1.0.3.zip) · [Pobierz pakiet IPK](https://github.com/GrzesSi/zgemma-channel-editor/releases/download/v1.0.3/enigma2-plugin-extensions-zgemma-channel-editor_1.0.3_all.ipk) · [Wszystkie pliki wydania](https://github.com/GrzesSi/zgemma-channel-editor/releases/tag/v1.0.3)
 
-Pobierz paczkę instalacyjną `zgemma-channel-editor_1.0.3.zip` z sekcji **Releases** projektu albo z załącznika na forum. Archiwum kodu źródłowego projektu jest osobnym plikiem.
+Wybierz jeden sposób instalacji: paczkę ZIP przez WinSCP albo pakiet IPK. Pobierz plik z sekcji **Releases → Assets**. Do instalacji przez WinSCP użyj `zgemma-channel-editor_1.0.3.zip`; pliki **Source code (zip)**, **Source code (tar.gz)** oraz ZIP z przycisku **Code** zawierają źródła i mają inny układ folderów.
 
 1. Upewnij się, że na dekoderze jest OpenWebif.
 2. Rozpakuj paczkę instalacyjną na komputerze.
 3. Połącz się z własnym dekoderem przez WinSCP, używając jego adresu IP i danych dostępu.
-4. Skopiuj cały folder `KanalowyEditor` do `/usr/lib/enigma2/python/Plugins/Extensions/`.
+4. Skopiuj cały folder `KanalowyEditor` do `/usr/lib/enigma2/python/Plugins/Extensions/`. Plik wtyczki ma znaleźć się dokładnie pod adresem `/usr/lib/enigma2/python/Plugins/Extensions/KanalowyEditor/plugin.py`. Nie kopiuj folderu nadrzędnego paczki ani samego pliku ZIP.
 5. Zrestartuj interfejs użytkownika (GUI) dekodera.
 6. Otwórz **Wtyczki → zgemma-channel-editor**. Zobaczysz adres strony.
 7. Otwórz w przeglądarce `http://ADRES_IP_DEKODERA:8877`, zastępując `ADRES_IP_DEKODERA` adresem swojego urządzenia.
 
-Alternatywnie zainstaluj pakiet `enigma2-plugin-extensions-zgemma-channel-editor_1.0.3_all.ipk` jako lokalną wtyczkę w OpenATV. Dla użytkowników terminala:
+Aby zainstalować pakiet IPK:
+
+1. Pobierz `enigma2-plugin-extensions-zgemma-channel-editor_1.0.3_all.ipk` z sekcji **Releases → Assets**. Plik `.sha256` służy do sprawdzenia pobrania i nie jest instalatorem.
+2. Połącz się z dekoderem przez WinSCP i skopiuj plik `.ipk` do folderu `/tmp` **na dekoderze**. Pakietu IPK nie rozpakowuj.
+3. Otwórz terminal połączony z dekoderem, zaloguj się jako `root` i wykonaj:
 
 ```sh
 opkg install /tmp/enigma2-plugin-extensions-zgemma-channel-editor_1.0.3_all.ipk
 ```
 
-Po instalacji ręcznie zrestartuj GUI. Po aktualizacji podmień cały folder wtyczki i odśwież stronę przez Ctrl+F5.
+4. Po zakończeniu instalacji zrestartuj GUI dekodera. Następnie otwórz **Wtyczki → zgemma-channel-editor** i użyj wyświetlonego adresu w przeglądarce na komputerze lub telefonie w tej samej sieci.
+
+Przy aktualizacji przez WinSCP podmień cały folder wtyczki. Przy aktualizacji przez IPK zainstaluj pakiet nowszej wersji. Zrestartuj GUI i odśwież stronę przez Ctrl+F5.
+
+Jeżeli instalator zgłasza brak pliku, sprawdź, czy IPK znajduje się w `/tmp` na dekoderze i czy jego nazwa zgadza się z poleceniem. Jeśli wtyczka nie pojawia się w menu, sprawdź docelową ścieżkę `plugin.py`, wykonaj restart GUI i upewnij się, że system korzysta z Pythona 3. Komunikat o brakującym module lub zależności wymaga odczytania jego pełnej treści; nie oznacza automatycznie uszkodzonej paczki.
 
 ## Korzystanie i kopie
 

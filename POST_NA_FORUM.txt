@@ -4,9 +4,9 @@ Przygotowałem polski edytor listy kanałów działający na dekoderze i obsług
 
 Można układać kanały i grupy, kopiować i przenosić wpisy, cofać zmiany, importować i eksportować listy .tar.gz oraz przywracać kopie. Pod nazwą kanału jest jego stały typ, np. wiadomości, filmy, seriale lub sport. Przed zapisem powstaje automatyczna kopia listy.
 
-Wymagania: OpenATV 8, Python 3 i OpenWebif. Paczka nie zawiera list kanałów ani danych dostępowych — każdy korzysta ze swojej listy.
+Docelowe środowisko: OpenATV 8 z Pythonem 3 i OpenWebif. Działanie na rzeczywistym dekoderze wymaga weryfikacji. Paczka nie zawiera list kanałów ani danych dostępowych; odczytuje listę z dekodera, na którym ją zainstalowano.
 
-Instalacja: rozpakuj załączony ZIP, skopiuj folder KanalowyEditor do /usr/lib/enigma2/python/Plugins/Extensions/ i zrestartuj GUI. W menu Wtyczki → zgemma-channel-editor znajdziesz adres strony.
+Instalacja: pobierz z Releases → Assets paczkę zgemma-channel-editor_1.0.3.zip (nie Source code), rozpakuj ją, skopiuj folder KanalowyEditor do /usr/lib/enigma2/python/Plugins/Extensions/ i zrestartuj GUI. W menu Wtyczki → zgemma-channel-editor znajdziesz adres strony.
 
 To wydanie testowe. Operacje na listach i stronę sprawdzono lokalnie, a integrację Enigma2 w symulacji. Będę wdzięczny za informacje o działaniu na rzeczywistych dekoderach: model, wersja systemu i opis ewentualnego problemu.
 

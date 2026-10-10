@@ -1,13 +1,16 @@
 zgemma-channel-editor — 1.0.3 (wydanie testowe)
 
 WYMAGANIA
-OpenATV 8, Python 3, OpenWebif. Inne systemy i rzeczywiste dekodery wymagają sprawdzenia. Systemy z Pythonem 2 nie są obsługiwane.
+Docelowe środowisko: OpenATV 8 z Pythonem 3 i OpenWebif. Zgodność na rzeczywistym dekoderze oraz innych systemach nie została potwierdzona. Systemy z Pythonem 2 nie są obsługiwane.
 
 INSTALACJA PRZEZ WINSCP
-1. Rozpakuj zgemma-channel-editor_1.0.3.zip.
+1. Pobierz z Releases → Assets plik zgemma-channel-editor_1.0.3.zip i rozpakuj go na komputerze. Nie używaj archiwum Source code ani ZIP z przycisku Code.
 2. Połącz się z własnym dekoderem, używając jego adresu IP i danych dostępu.
 3. Skopiuj CAŁY folder KanalowyEditor do:
    /usr/lib/enigma2/python/Plugins/Extensions/
+   Sprawdź, czy istnieje plik:
+   /usr/lib/enigma2/python/Plugins/Extensions/KanalowyEditor/plugin.py
+   Nie kopiuj folderu nadrzędnego paczki ani samego ZIP.
 4. Zrestartuj interfejs użytkownika (GUI).
 5. Otwórz Wtyczki → zgemma-channel-editor, aby sprawdzić adres strony.
 6. Na komputerze lub telefonie w tej samej sieci otwórz:
@@ -15,8 +18,11 @@ INSTALACJA PRZEZ WINSCP
    Zamiast ADRES_IP_DEKODERA wpisz adres swojego dekodera.
 
 ALTERNATYWA: IPK
-Zainstaluj pakiet enigma2-plugin-extensions-zgemma-channel-editor_1.0.3_all.ipk jako lokalną wtyczkę w OpenATV, a następnie ręcznie zrestartuj GUI.
-W terminalu: opkg install /tmp/enigma2-plugin-extensions-zgemma-channel-editor_1.0.3_all.ipk
+1. Pobierz z Releases → Assets plik enigma2-plugin-extensions-zgemma-channel-editor_1.0.3_all.ipk. Plik .sha256 nie jest instalatorem.
+2. Przez WinSCP skopiuj IPK do folderu /tmp NA DEKODERZE. Nie rozpakowuj go.
+3. W terminalu połączonym z dekoderem zaloguj się jako root i wykonaj:
+   opkg install /tmp/enigma2-plugin-extensions-zgemma-channel-editor_1.0.3_all.ipk
+4. Zrestartuj GUI i wykonaj kroki 5–6 z instrukcji powyżej.
 
 OBSŁUGA
 Układaj kanały i grupy, kopiuj, przenoś, wyszukuj, importuj lub eksportuj własne listy .tar.gz. Stały typ kanału jest widoczny pod nazwą; nieznane stacje mają Typ nieokreślony.
@@ -25,7 +31,7 @@ Kanały usunięte z grup pozostają w katalogu. Wtyczka nie zawiera list kanał�
 Edytor działa bez logowania w zaufanej sieci lokalnej. Nie przekierowuj portu 8877 do internetu.
 
 AKTUALIZACJA
-Podmień cały folder KanalowyEditor, zrestartuj GUI i odśwież stronę przez Ctrl+F5.
+Przez WinSCP podmień cały folder KanalowyEditor albo zainstaluj IPK nowszej wersji. Zrestartuj GUI i odśwież stronę przez Ctrl+F5.
 
 SPRAWDZENIE
 Sprawdzono operacje na lokalnej kopii listy, zachowanie baz, kopie i cofanie oraz interfejs na komputerze i telefonie. Integrację Enigma2/Twisted sprawdzono w symulacji. Test na rzeczywistym dekoderze nie został potwierdzony. Zagnieżdżone grupy nie są obsługiwane.
